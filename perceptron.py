@@ -63,15 +63,21 @@ def pocket_algorithm(w, maxIterations):
 
 
 def data_preprocess():
-    pass
+    with open(TRAIN_SET_CSV_NAME,'rb') as csvfile:
+        dataReader = csv.reader(csvfile, delimiter=',', quotechar='|')
+        for row in dataReader:
+            pass
 
 
 def init():
     pass
 
 
-def classify(x):
-    pass
+def classify(w, x):
+    if vec_inner_product(w, x) > 0:
+        return 1
+    else:
+        return -1
 
 
 def get_output(x):
